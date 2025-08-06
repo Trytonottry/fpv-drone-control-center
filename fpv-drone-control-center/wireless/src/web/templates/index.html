@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Wireless FPV Control</title>
+  <style> body{font-family:sans-serif;} </style>
+</head>
+<body>
+  <h1>Wi-Fi FPV Drone Control</h1>
+  <button id="armBtn">ARM</button>
+  <button id="disarmBtn">DISARM</button>
+  <pre id="telem"></pre>
+
+  <script>
+    const ws = new WebSocket("ws://192.168.4.1:8765");
+    ws.onmessage = (e) => {
+      document.getElementById("telem").textContent = e.data;
+    };
+    document.getElementById("armBtn").onclick   = () => fetch("/api/arm", {method:"POST"});
+    document.getElementById("disarmBtn").onclick = () => fetch("/api/disarm",{method:"POST"});
+  </script>
+</body>
+</html>

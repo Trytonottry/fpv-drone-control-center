@@ -1,0 +1,8 @@
+pyserial==3.5
+pymsp==1.1.0
+flask==2.3.3
+flask-socketio==5.3.6
+gunicorn==21.2.0
+pymavlink==2.4.37
+websockets==11.0.3
+asyncio-mqtt==0.13.0

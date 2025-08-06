@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  fpv-control:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    privileged: true          # нужен для доступа к /dev/ttyS0
+    devices:
+      - "/dev/ttyS0:/dev/ttyS0"
+    ports:
+      - "5000:5000"
+    env_file:
+      - ../.env
+    restart: unless-stopped

@@ -1,0 +1,5 @@
+pyserial==3.5
+pymsp==1.1.0
+flask==2.3.3
+flask-socketio==5.3.6
+gunicorn==21.2.0

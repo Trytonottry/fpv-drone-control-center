@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>FPV Control</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>FPV Drone Control</h1>
+  <button id="armBtn">ARM</button>
+  <button id="disarmBtn">DISARM</button>
+
+  <script>
+    document.getElementById("armBtn").onclick   = () => fetch("/api/arm",   {method:"POST"});
+    document.getElementById("disarmBtn").onclick = () => fetch("/api/disarm",{method:"POST"});
+  </script>
+</body>
+</html>

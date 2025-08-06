@@ -1,0 +1,21 @@
+services:
+  onboard:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.onboard
+    privileged: true
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    network_mode: host
+    env_file:
+      - ../.env
+
+  ground:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.ground
+    ports:
+      - "5000:5000"
+    network_mode: host
+    env_file:
+      - ../.env
