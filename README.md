@@ -22,10 +22,9 @@ chmod +x scripts/*.sh
 
 2. Проводной режим (USB/UART)
 Подходит для стендовых испытаний или когда RPi сидит на дроне и управляет напрямую.
-Аппаратура
-
-    FC Betaflight ↔ UART ↔ RPi
-    Провод TX↔RX, RX↔TX, GND, 5 V
+Аппаратура:
+1.FC Betaflight ↔ UART ↔ RPi
+2.Провод TX↔RX, RX↔TX, GND, 5 V
 
 Запуск
 ./scripts/start_wired.sh
